@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Products
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <table class="table">
+      <tbody>
+      <ion-list>
+          <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Img</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+          <tr *ngFor="let item of productsData">
+              <td>{{item.id}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.category_id}}</td>
+              <td>{{item.img}}</td>
+            <td style="display: flex">
+              <ion-button color="warning" size="small" routerLink='/edit/{{item.id}}'>
+                <ion-icon name="create"></ion-icon>
+              </ion-button>
+              <ion-button color="danger" size="small" (click)="delete(item)">
+                <ion-icon name="trash"></ion-icon>
+              </ion-button>
+            </td>
+          </tr>
+        
+      </ion-list>
+        </tbody>
+    </table>
+    <ion-button [routerLink]="['/create']">
+      Add Products
+    </ion-button>
+  </ion-content>
+
+
+<!-- <ion-content>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Address</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+  <ion-list>
+    <ion-item *ngFor="let item of productsData">
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.category_id}}</td>
+      <td>{{item.img}}</td>
+      <div class="item-note" slot="end">
+        {{item.note}}
+      </div>
+    </ion-item>
+  </ion-list>
+ 
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+ 
+</ion-content> -->

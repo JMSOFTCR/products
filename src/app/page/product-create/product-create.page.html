@@ -1,0 +1,51 @@
+<!-- student-create.html -->
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Create Products</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content padding>
+ 
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input [(ngModel)]="data.name" placeholder="Enter Name"></ion-input>
+  </ion-item>
+ 
+  <ion-item>
+    <ion-label>Category</ion-label>
+    <ion-input [(ngModel)]="data.category_id" placeholder="Enter Category"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Stock</ion-label>
+    <ion-input [(ngModel)]="data.stock" placeholder="Enter Stock"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-input [(ngModel)]="data.description" placeholder="Enter Description"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Cost price</ion-label>
+    <ion-input [(ngModel)]="data.price_cost" placeholder="Enter Cost Price"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Sale price</ion-label>
+    <ion-input [(ngModel)]="data.price_sell" placeholder="Enter Sale Price"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Profit</ion-label>
+    <ion-input [(ngModel)]="data.profit" placeholder="Enter Profit"></ion-input>
+  </ion-item>
+  
+ 
+  <ion-item>
+    <ion-button (click)="submitForm()">Add
+    </ion-button>
+  </ion-item>
+ 
+</ion-content> 
