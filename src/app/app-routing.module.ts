@@ -15,8 +15,10 @@ const routes: Routes = [
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
   },
-  { path: 'product-create', loadChildren: './page/product-create/product-create.module#ProductCreatePageModule' },
-  { path: 'product-edit', loadChildren: './page/product-edit/product-edit.module#ProductEditPageModule' }
+  { path: 'create', loadChildren: () => import('./page/product-create/product-create.module').then(m => m.ProductCreatePageModule) },
+  //{ path: 'product-create', loadChildren: './page/product-create/product-create.module#ProductCreatePageModule' },
+  { path: 'edit/:id', loadChildren: () => import('./page/product-edit/product-edit.module').then(m => m.ProductEditPageModule) }
+  //{ path: 'product-edit', loadChildren: './page/product-edit/product-edit.module#ProductEditPageModule' }
 ];
 
 @NgModule({
